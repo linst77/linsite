@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Update{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<div class="login-page">
+    <div class="container rounded">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <h3 class="mb-3">Login Now</h3>
+                <div class="bg-white shadow rounded">
+                    <div class="row">
+                        <div class="col-md-7 pe-0">
+                            <div class="form-left h-100 py-5 px-5">
+                                <form action="" class="row g-4" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-group" style="width: 100%">
+                                        {% include 'messages.html' %}
+                                        <label >Email address</label>
+                                        <input type="email" class="form-control" id="email" name="email" value="{{email}}" placeholder="이메일">
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                      </div>
+                                      <div class="form-group" style="width: 100%">
+                                        <label >Phone Number</label>
+                                        <input type="phone" class="form-control" id="phone" name="phone" value="{{phone}}" placeholder="전화번호">
+                                      </div>
+                                    <div class="form-group">
+                                    <input class="btn btn-warning" type="submit" value="Submit">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-5 ps-0 d-none d-md-block">
+                            <div class="form-right h-100 bg-warning text-white text-center pt-5 bg-image"
+     style="background-image: url('https://media.istockphoto.com/photos/beautiful-dandelion-background-yellow-flowers-is-blooming-in-the-picture-id918413974?k=20&m=918413974&s=612x612&w=0&h=_qz7ho4QjExpDK88MC1joWi7Ss2vo3lds2kknyf05MA=');     height: 100vh">
+                                <i class="bi bi-bootstrap"></i>
+                                <h2 class="fs-1">Welcome</h2>
+                                <p class="text-end text-white mt-2 mr-2 ml-2">Welcome to data upload center this is the right place for you to upload anykind data</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-end text-secondary mt-3">Bootstrap 5 Login Page Design</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

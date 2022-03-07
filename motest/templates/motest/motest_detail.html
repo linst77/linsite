@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Bookmark{% endblock %}
+
+{% block content %}
+<div>
+
+
+</div>
+
+<div class="container">
+  <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Collapsible Group Item #1
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          <form action="" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+            {{context.form_1.as_p}}
+              <input name="form_type" value="info-form" type="hidden">
+            <div class="alert alert-primary" role="alert"> This is a primary alert—check it out! </div>
+            <input class="btn btn-primary" type="submit" value="Submit">
+          </form>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Collapsible Group Item #2
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          <form action="" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{context.form_2}}
+            <br>
+          <input name="form_type" value="first-form" type="hidden">
+          <input class="btn btn-primary" type="submit" value="Submit">
+		  </form>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Collapsible Group Item #3
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+          <form action="" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+            {{context.form_3}}
+              <input name="form_type" value="second-form" type="hidden">
+              <input class="btn btn-primary" type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+      <form action="" method="post">
+	  {% csrf_token %}
+        {{form_final}}
+      <input name="form_type" value="form_final" type="hidden">
+      <input class="btn btn-primary" type="submit">
+  </form>
+</div>
+
+</div>
+{% endblock %}
